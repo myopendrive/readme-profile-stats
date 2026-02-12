@@ -241,7 +241,11 @@ const getStyles = ({
 //     : commits_year
 //       ? ` (${commits_year})`
 //       : ` (${i18n.t("wakatimecard.lastyear")})`;
-const getTotalCommitsYearLabel = () => "";
+//// const getTotalCommitsYearLabel = () => "";
+const getTotalCommitsYearLabel = (include_all_commits, commits_year, i18n) => {
+  if (include_all_commits) return "";
+  else return ` (${i18n.t("wakatimecard.lastyear")})`;
+};
 
 /**
  * @typedef {import('../fetchers/types').StatsData} StatsData
